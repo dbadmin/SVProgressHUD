@@ -1,18 +1,11 @@
-// swift-tools-version:4.2
+// swift-tools-version:5.2
 
 import PackageDescription
 
 let package = Package(
-  name: "SVProgressHUD",
-  dependencies: [
-        
-  ],
-  targets: [
-    .target(
-        name: "SVProgressHUD",
-        dependencies: []),
-    .testTarget(
-        name: "SVProgressHUDTests",
-        dependencies: ["SVProgressHUD"]),
-  ]
+    name: "SVProgressHUD",
+    platforms: [.iOS(.v9), .tvOS(.v9)],
+    products: [.library(name: "SVProgressHUD", targets: ["SVProgressHUD"])],
+    targets: [.target(name: "SVProgressHUD", path: "Sources")],
+    swiftLanguageVersions: [.v5]
 )
